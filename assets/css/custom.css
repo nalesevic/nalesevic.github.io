@@ -19,10 +19,6 @@ body {
   margin-right: 250px;
 }
 
-nav {
-
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -89,3 +85,51 @@ li a:hover {
 
 main#spapp > section#projects { margin-top: -140px;}
 main#spapp > section#error_404 { background:white; color:#fff; }
+
+ @media only screen and (max-width: 800px) {
+   nav {
+      margin-bottom: -20px;
+   }
+
+   body {
+     margin-top: 0;
+     margin-left: 15px;
+     margin-right: 15px;
+     padding-right: 15px;
+     padding-left: 15px;
+     font-size: 0.8em;
+   }
+   .name {
+     font-size: 1.5em;
+   }
+
+   .rest {
+     padding-left: 700px;
+     padding: 18px 16px;
+     float: right;
+   }
+
+   img {
+     width: 50%;
+     height: 50%;
+   }
+
+   .picture {
+     text-align: center;
+   }
+
+   .name {
+     margin-top: 10px;
+   }
+
+   .rest {
+     float: left;
+     margin-left: -14px;
+   }
+
+   .text {
+     font-size: 1.1em;
+     padding-right: 15px;
+     padding-left: 15px;
+   }
+ }
