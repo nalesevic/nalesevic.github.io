@@ -1,0 +1,85 @@
+html {
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  color: rgba(0,0,0,0.87);
+}
+
+main#spapp h1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 2.1rem 0 1.68rem 0;
+  text-align:center;
+}
+
+body {
+  margin-left: 250px;
+  margin-right: 250px;
+  height: 100%;
+}
+
+nav {
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+}
+
+li {
+  float: left;
+  padding: 14px 16px;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: blue;
+}
+
+.name {
+  font-size: 3em;
+  margin-top: -10px;
+}
+
+.rest {
+  padding-left: 700px;
+  padding: 18px 16px;
+  float: right;
+}
+
+.picture {
+  float: left;
+}
+
+.text {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.project_description {
+  padding-left: 30px;
+}
+
+.project_description p {
+  margin-top: -20px;
+}
+
+.project_description a {
+  color: #4d4dff;
+  text-decoration: none;
+}
+
+.headline {
+  padding-left: 18px;
+}
+
+main#spapp > section#error_404 { background:#b71c1c; color:#fff; }
