@@ -3,6 +3,7 @@ html {
   font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   color: rgba(0,0,0,0.87);
+  scroll-behavior: smooth;
 }
 
 main#spapp h1 {
@@ -13,12 +14,13 @@ main#spapp h1 {
 }
 
 body {
+  margin-top: 50px;
   margin-left: 250px;
   margin-right: 250px;
-  height: 100%;
 }
 
 nav {
+
 }
 
 ul {
@@ -36,18 +38,19 @@ li {
 
 li a {
   display: block;
-  color: black;
+  color: #0000b3;
   text-align: center;
   text-decoration: none;
 }
 
 li a:hover {
-  color: blue;
+  color: #8080ff;
 }
 
 .name {
   font-size: 3em;
   margin-top: -10px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .rest {
@@ -61,6 +64,7 @@ li a:hover {
 }
 
 .text {
+  font-size: 18px;
   padding-top: 50px;
   padding-left: 50px;
 }
@@ -79,7 +83,9 @@ li a:hover {
 }
 
 .headline {
+  padding-top: 120px;
   padding-left: 18px;
 }
 
-main#spapp > section#error_404 { background:#b71c1c; color:#fff; }
+main#spapp > section#projects { margin-top: -140px;}
+main#spapp > section#error_404 { background:white; color:#fff; }
