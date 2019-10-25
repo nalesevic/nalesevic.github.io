@@ -4,6 +4,8 @@ html {
   font-weight: normal;
   color: rgba(0,0,0,0.87);
   scroll-behavior: smooth;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 main#spapp h1 {
