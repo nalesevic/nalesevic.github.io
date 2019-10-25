@@ -6,6 +6,7 @@ $(document).ready(function() {
   // define routes
   app.route({view: 'home', load: 'home.html' });
   app.route({view: 'projects', load: 'projects.html' });
+  app.route({view: 'awards', load: 'awards.html' });
   // run app
   app.run();
 
