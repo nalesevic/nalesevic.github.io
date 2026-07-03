@@ -804,9 +804,9 @@ font-size:.85rem; letter-spacing:.04em;
 
 .attend-toggle input + label { box-shadow: 0 0 0 .18rem var(--c-primary-soft); }
 
-.attend-toggle input + label.yes { border-color: var(--c-primary-strong); color(--c-on-primary); background: var(--c-primary-strong); }
+.attend-toggle input + label.yes { border-color: var(--c-primary-strong); color: white; background: var(--c-primary-strong); }
 
-.attend-toggle input + label.no  { border-color: var(--c-accent-strong); color(--c-on-accent); background: var(--c-accent-strong); }
+.attend-toggle input + label.no  { border-color: var(--c-accent-strong); color: white; background: var(--c-accent-strong); }
 
 
 
@@ -1291,23 +1291,23 @@ html { scroll-behavior:auto; }
 
         </select>
 
-        <div class="field-err" id="err-guests">Odaberite broj osoba u pratnji.</div>
+        <!-- <div class="field-err" id="err-guests">Odaberite broj osoba u pratnji.</div> -->
 
       </div>
 
       <div class="col-sm-6 mb-3">
 
-        <label class="form-label d-block">Dolazite li?</label>
+        <label class="form-label d-block">Dolazite?</label>
 
         <div class="attend-toggle">
 
           <input type="radio" id="att-yes" name="attend" value="yes" />
 
-          <label for="att-yes" class="yes">Da, dolazim</label>
+          <label for="att-yes" class="yes">Da</label>
 
           <input type="radio" id="att-no" name="attend" value="no" />
 
-          <label for="att-no" class="no">Neću moći doći</label>
+          <label for="att-no" class="no">Ne</label>
 
         </div>
 
@@ -1849,7 +1849,6 @@ form.addEventListener("submit", async function (ev) {
   ev.preventDefault();
 
   var name = form.name.value.trim();
-  var guests = form.guests.value;
   var attend = form.querySelector('input[name="attend"]:checked');
 
   var ok = true;
@@ -1861,15 +1860,6 @@ form.addEventListener("submit", async function (ev) {
   } else {
     showErr("err-name", false);
     markInvalid(fName, false);
-  }
-
-  if (!guests) {
-    showErr("err-guests", true);
-    markInvalid(fGuests, true);
-    ok = false;
-  } else {
-    showErr("err-guests", false);
-    markInvalid(fGuests, false);
   }
 
   if (!attend) {
@@ -1894,8 +1884,9 @@ form.addEventListener("submit", async function (ev) {
 
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalText = submitBtn.textContent;
+  var changeButtonText = "Poslano";
 
-  submitBtn.textContent = "Sending...";
+  submitBtn.textContent = "Šaljem...";
   submitBtn.disabled = true;
 
   try {
@@ -1932,7 +1923,7 @@ form.addEventListener("submit", async function (ev) {
     successMsg.textContent = msg;
 
     form.reset();
-    form.style.display = "none";
+    // form.style.display = "none";
     success.classList.add("show");
 
     success.scrollIntoView({
@@ -1941,6 +1932,7 @@ form.addEventListener("submit", async function (ev) {
     });
 
   } catch (error) {
+    var changeButtonText = "";
     console.error(error);
     alert("Došlo je do greške. Pokušajte ponovno.");
   } finally {
