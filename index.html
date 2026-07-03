@@ -329,20 +329,6 @@
     }
 
 
-    input[name="attend"] {
-      display: none;
-    }
-
-    input[name="attend"]+label {
-      border: 2px solid #ccc;
-      cursor: pointer;
-    }
-
-    input[name="attend"]:checked+label {
-      border-color: #198754;
-      /* green */
-    }
-
     ::selection {
       background: transparent;
     }
@@ -554,6 +540,10 @@
       opacity: .82;
       transition: opacity .25s, color .25s;
 
+    }
+
+    .attend-toggle input:checked+label {
+      box-shadow: 0 0 12px 3px var(--c-primary-strong);
     }
 
     .nav-links a:hover {
@@ -1551,7 +1541,7 @@
 
 
 
-    /* ===== PODNOŽJE ===== */
+    /* ===== FOOTER ===== */
 
     .foot {
       text-align;
@@ -1920,9 +1910,9 @@
 
           <a href="#pocetna">Početna</a>
 
-          <a href="#rsvp">Potvrdi</a>
-
           <a href="#raspored">Raspored</a>
+
+          <a href="#rsvp">Potvrdi</a>
 
           <a href="#ostalo">Ostalo</a>
 
@@ -1994,7 +1984,7 @@
 
         <div class="hero-meta reveal d2">
 
-          <div class="cell"><span class="k"></span><span class="v">Subota 13 septembar, 2026</span></div>
+          <div class="cell"><span class="k"></span><span class="v">Nedjelja 13 septembar, 2026</span></div>
 
           <div class="cell"><span class="k"></span><span class="v">18:30 h</span></div>
 
@@ -2048,143 +2038,7 @@
     </section>
 
 
-    <!-- ===== RSVP ===== -->
 
-    <section id="rsvp" class="section">
-
-      <div class="container container-narrow">
-
-        <div class="text-center-block reveal">
-
-          <span class="eyebrow">Potvrda dolaska</span>
-
-          <h2 class="section-title">Potvrdite svoj dolazak</h2>
-
-          <svg class="leaf-divider" viewBox="0 0 120 26" fill="none" stroke="currentColor" stroke-width="1.3"
-            aria-hidden="true">
-
-            <path d="M60 4 C58 10 58 16 60 22 C62 16 62 10 60 4Z" />
-
-            <path d="M56 16 C44 16 34 14 22 9" />
-            <path d="M64 16 C76 16 86 14 98 9" />
-
-            <path d="M44 15 C44 12 42 10 38 9" />
-            <path d="M76 15 C76 12 78 10 82 9" />
-
-            <path d="M30 13 C30 11 28 9 25 8" />
-            <path d="M90 13 C90 11 92 9 95 8" />
-
-          </svg>
-
-          <p class="lead-muted">Potvrdite svoj dolazak najkasnije do <strong>1. septembra 2026</strong>.</p>
-
-        </div>
-
-
-
-        <div class="surface rsvp-card reveal d1" style="max-width:640px; margin:2.4rem auto 0;">
-
-          <form id="rsvpForm" novalidate>
-
-            <div class="mb-3">
-
-              <label class="form-label" for="f-name">Puno ime i prezime</label>
-
-              <input type="text" class="form-control" id="f-name" name="name" autocomplete="name" />
-
-              <div class="field-err" id="err-name">Upišite svoje ime.</div>
-
-            </div>
-
-
-
-            <div class="row g-3">
-
-              <div class="col-sm-6 mb-3">
-
-                <label class="form-label" for="f-guests">Broj osoba u pratnji</label>
-
-                <select class="form-select" id="f-guests" name="guests">
-
-                  <option value="" selected disabled>Odaberite</option>
-
-                  <option value="0">0</option>
-
-                  <option value="1">1</option>
-
-                  <option value="2">2</option>
-
-                  <option value="3">3</option>
-
-                  <option value="4">4</option>
-
-                  <option value="5">5</option>
-
-                </select>
-
-                <!-- <div class="field-err" id="err-guests">Odaberite broj osoba u pratnji.</div> -->
-
-              </div>
-
-              <div class="col-sm-6 mb-3">
-
-                <label class="form-label d-block">Dolazite?</label>
-
-                <div class="attend-toggle">
-
-                  <input type="radio" id="att-yes" name="attend" value="yes" />
-
-                  <label for="att-yes" class="yes">Da, dolazim</label>
-
-                  <input type="radio" id="att-no" name="attend" value="no" />
-
-                  <label for="att-no" class="no">Neću moći</label>
-
-                </div>
-
-                <div class="field-err" id="err-attend">Odaberite jednu od opcija</div>
-
-              </div>
-
-            </div>
-
-
-
-
-            <button type="submit" class="btn-wed">Pošalji potvrdu</button>
-
-          </form>
-
-
-
-          <div class="rsvp-success" id="rsvpSuccess" role="status" aria-live="polite">
-
-            <div class="check">
-
-              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6">
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-
-            </div>
-
-            <h3 class="serif" id="successTitle" style="font-size:1.7rem;">Hvala</h3>
-
-            <p class="lead-muted" id="successMsg" style="margin-top:.4rem;"></p>
-
-            <button type="button" class="btn-wed" id="rsvpReset" style="max-width:260px; margin:1.4rem auto 0;">Uredi
-              odgovor</button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ===== 5. raspored ===== -->
 
     <section id="raspored" class="section" style="background: var(--c-metal-soft);">
 
@@ -2296,6 +2150,141 @@
 
     </section>
 
+    <!-- ===== RSVP ===== -->
+
+    <section id="rsvp" class="section">
+
+      <div class="container container-narrow">
+
+        <div class="text-center-block reveal">
+
+          <span class="eyebrow">Potvrda dolaska</span>
+
+          <h2 class="section-title">Potvrdite svoj dolazak</h2>
+
+          <svg class="leaf-divider" viewBox="0 0 120 26" fill="none" stroke="currentColor" stroke-width="1.3"
+            aria-hidden="true">
+
+            <path d="M60 4 C58 10 58 16 60 22 C62 16 62 10 60 4Z" />
+
+            <path d="M56 16 C44 16 34 14 22 9" />
+            <path d="M64 16 C76 16 86 14 98 9" />
+
+            <path d="M44 15 C44 12 42 10 38 9" />
+            <path d="M76 15 C76 12 78 10 82 9" />
+
+            <path d="M30 13 C30 11 28 9 25 8" />
+            <path d="M90 13 C90 11 92 9 95 8" />
+
+          </svg>
+
+          <p class="lead-muted">Potvrdite svoj dolazak najkasnije do <strong>1. septembra 2026</strong>.</p>
+
+        </div>
+
+
+
+        <div class="surface rsvp-card reveal d1" style="max-width:640px; margin:2.4rem auto 0;">
+
+          <form id="rsvpForm" novalidate>
+
+            <div class="mb-3">
+
+              <label class="form-label" for="f-name">Puno ime i prezime</label>
+
+              <input type="text" class="form-control" id="f-name" name="name" placeholder="Vaše ime"
+                autocomplete="name" />
+
+              <!-- <div class="field-err" id="err-name">Upišite svoje ime.</div> -->
+
+            </div>
+
+
+
+            <div class="row g-3">
+
+              <div class="col-sm-6 mb-3">
+
+                <label class="form-label" for="f-guests">Broj osoba u pratnji</label>
+
+                <select class="form-select" id="f-guests" name="guests">
+
+                  <option value="" selected disabled>Odaberite</option>
+
+                  <option value="0">0</option>
+
+                  <option value="1">1</option>
+
+                  <option value="2">2</option>
+
+                  <option value="3">3</option>
+
+                  <option value="4">4</option>
+
+                  <option value="5">5</option>
+
+                </select>
+
+                <!-- <div class="field-err" id="err-guests">Odaberite broj osoba u pratnji.</div> -->
+
+              </div>
+
+              <div class="col-sm-6 mb-3">
+
+                <label class="form-label d-block">Dolazite?</label>
+
+                <div class="attend-toggle">
+
+                  <input type="radio" id="att-yes" name="attend" value="yes" />
+
+                  <label for="att-yes" class="yes">Da, dolazim</label>
+
+                  <input type="radio" id="att-no" name="attend" value="no" />
+
+                  <label for="att-no" class="no">Neću moći</label>
+
+                </div>
+
+                <!-- <div class="field-err" id="err-attend">Odaberite jednu od opcija</div> -->
+
+              </div>
+
+            </div>
+
+
+
+
+            <button type="submit" class="btn-wed">Pošalji potvrdu</button>
+
+          </form>
+
+
+
+          <div class="rsvp-success" id="rsvpSuccess" role="status" aria-live="polite">
+
+            <div class="check">
+
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M5 13l4 4L19 7" />
+              </svg>
+
+            </div>
+
+            <h3 class="serif" id="successTitle" style="font-size:1.7rem;">Hvala</h3>
+
+            <p class="lead-muted" id="successMsg" style="margin-top:.4rem;"></p>
+
+            <button type="button" class="btn-wed" id="rsvpReset" style="max-width:260px; margin:1.4rem auto 0;">Uredi
+              odgovor</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
 
 
     <!-- ===== ostalo ===== -->
@@ -2341,7 +2330,7 @@
                 <path d="M9 21v-6h6v6" />
               </svg>
 
-              <h4>Lokacija</h4>
+              <h4>Napomena za goste</h4>
 
               <p>Šerijatsko i općinsko vjenčanje je obavljeno u Sarajevu.</p>
 
@@ -2361,12 +2350,12 @@
                 <circle cx="12" cy="10" r="3" />
               </svg>
 
-              <h4>Napomene za goste</h4>
+              <h4>Lokacija</h4>
 
               <p><strong>Hotel Urban</strong> — Predivni restoran u centru Bužima.</p>
 
               <p> <a href="https://maps.app.goo.gl/mhfWvkfHawybKVrY6" target="_blank" rel="noopener noreferrer"
-                  class="btn btn-primary">
+                  class="ic">
                   Otvori u Google Maps
                 </a></p>
 
@@ -2784,7 +2773,7 @@
 
           form.reset();
           // form.style.display = "none";
-          success.classList.add("show");
+          // success.classList.add("show");
 
           success.scrollIntoView({
             behavior: "smooth",
@@ -2848,6 +2837,32 @@
         });
 
       }
+
+
+      function isInteractive(target) {
+        return !!(
+          target.closest &&
+          target.closest(
+            "#themePanel, #rsvpForm, .theme-panel, input, textarea, select, button, a"
+          )
+        );
+      }
+
+      document.addEventListener("contextmenu", function (e) {
+        if (!isInteractive(e.target)) e.preventDefault();
+      });
+
+      document.addEventListener("selectstart", function (e) {
+        if (!isInteractive(e.target)) e.preventDefault();
+      });
+
+      document.addEventListener("copy", function (e) {
+        if (!isInteractive(e.target)) e.preventDefault();
+      });
+
+      document.addEventListener("dragstart", function (e) {
+        if (!isInteractive(e.target)) e.preventDefault();
+      });
 
     })();
 
