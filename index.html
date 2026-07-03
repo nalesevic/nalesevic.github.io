@@ -1006,11 +1006,15 @@ background-repeat: repeat;
 
 opacity: .05;
 
+background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200'><text x='20' y='110' font-family='Lato, sans-serif' font-size='22' fill='%23000000' transform='rotate(-30 20 110)'>DEMO · Nemeles · Workana</text></svg>");
+
 }
 
 [data-mode="dark"] .wm-diagonal {
 
 opacity: .07;
+
+background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200'><text x='20' y='110' font-family='Lato, sans-serif' font-size='22' fill='%23ffffff' transform='rotate(-30 20 110)'>DEMO · Nemeles · Workana</text></svg>");
 
 }
 
@@ -1886,6 +1890,8 @@ html { scroll-behavior:auto; }
 
 <!-- ===== MARCA DE AGUA INFERIOR (fija) ===== -->
 
+<a class="wm-bar" href="https://github.com/NemelesUrek" target="_blank" rel="noopener">DEMO de portafolio <span class="star">·</span> Nemeles <span class="star">·</span> github.com/NemelesUrek</a>
+
 
 
 <!-- ===== SCRIPTS ===== -->
@@ -1898,7 +1904,9 @@ html { scroll-behavior:auto; }
 
 
 
-  /* ---------- Konzola ---------- */
+  /* ---------- Aviso en consola ---------- */
+
+  console.log("%cDEMO de portafolio · Nemeles · github.com/NemelesUrek",
 
     "background:#8A9A7B;color:#fff;padding:6px 12px;border-radius:4px;font-size:13px;");
 
