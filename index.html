@@ -1845,8 +1845,8 @@ form.querySelectorAll('input[name="attend"]').forEach(function (r) {
   });
 });
 
-form.addEventListener("submit", function (ev) {
-  ev.preventDefault(); // NE šalje se nikakav zahtjev serveru
+form.addEventListener("submit", async function (ev) {
+  ev.preventDefault();
 
   var name = form.name.value.trim();
   var guests = form.guests.value;
@@ -1882,45 +1882,71 @@ form.addEventListener("submit", function (ev) {
   if (!ok) {
     var firstErr = form.querySelector(".field-err.show");
 
-    if (firstErr)
+    if (firstErr) {
       firstErr.scrollIntoView({
         behavior: "smooth",
         block: "center",
       });
+    }
 
     return;
   }
 
-  var firstName = name.split(/\s+/)[0];
-  var msg;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
 
-  if (attend.value === "yes") {
+  submitBtn.textContent = "Sending...";
+  submitBtn.disabled = true;
 
+  try {
+    const formData = new FormData(form);
+    formData.append("access_key", "30ec9d37-f51d-42a5-b0c2-2347792ad0ed");
 
-    var ppl = guests === "1" ? "1 osoba" : guests + " osobe";
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-    successTitle.textContent = "Hvala, " + firstName + "!";
+    const data = await response.json();
 
-    msg =
-      "Tvoja potvrda je uspješno zabilježena. Radujemo se što ćemo zajedno proslaviti naše vjenčanje!";
+    if (!response.ok) {
+      alert("Greška: " + data.message);
+      return;
+    }
 
-  } else {
+    var firstName = name.split(/\s+/)[0];
+    var msg;
 
-    successTitle.textContent = "Hvala, " + firstName;
+    if (attend.value === "yes") {
+      successTitle.textContent = "Hvala, " + firstName + "!";
 
-    msg = "Tvoja potvrda je uspješno zabilježena. Žao nam je što nećeš moći biti s nama"
+      msg =
+        "Tvoja potvrda je uspješno zabilježena. Radujemo se što ćemo zajedno proslaviti naše vjenčanje!";
+    } else {
+      successTitle.textContent = "Hvala, " + firstName + "!";
 
+      msg =
+        "Tvoja potvrda je uspješno zabilježena. Žao nam je što nećeš moći biti s nama.";
+    }
+
+    successMsg.textContent = msg;
+
+    form.reset();
+    form.style.display = "none";
+    success.classList.add("show");
+
+    success.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+  } catch (error) {
+    console.error(error);
+    alert("Došlo je do greške. Pokušajte ponovno.");
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
   }
-
-  successMsg.textContent = msg;
-
-  form.style.display = "none";
-  success.classList.add("show");
-
-  success.scrollIntoView({
-    behavior: "smooth",
-    block: "center",
-  });
 });
 
 document.getElementById("rsvpReset").addEventListener("click", function () {
