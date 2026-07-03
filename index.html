@@ -1301,7 +1301,7 @@ html { scroll-behavior:auto; }
 
         <div class="attend-toggle">
 
-          <input type="radio" id="att-yes" name="attend" value="si" />
+          <input type="radio" id="att-yes" name="attend" value="yes" />
 
           <label for="att-yes" class="yes">Da, dolazim</label>
 
@@ -1334,7 +1334,7 @@ html { scroll-behavior:auto; }
 
     </div>
 
-    <h3 class="serif" id="successTitle" style="font-size:1.7rem;">¡Gracias!</h3>
+    <h3 class="serif" id="successTitle" style="font-size:1.7rem;">Hvala</h3>
 
     <p class="lead-muted" id="successMsg" style="margin-top:.4rem;"></p>
 
@@ -1535,8 +1535,6 @@ html { scroll-behavior:auto; }
 <div class="names">Amina <span class="amp">&amp;</span> Nizam</div>
 
 <div class="metal-rule"></div>
-
-<p class="lead-muted">12 · 12 · 2026 — Hacienda Los Olivos, Mérida, Yucatán</p>
 
   </div>
 
@@ -1896,27 +1894,21 @@ form.addEventListener("submit", function (ev) {
   var firstName = name.split(/\s+/)[0];
   var msg;
 
-  if (attend.value === "si") {
+  if (attend.value === "yes") {
 
-    // Ako si u HTML-u promijenio value="si" u value="da",
-    // ovdje također promijeni u "da".
 
     var ppl = guests === "1" ? "1 osoba" : guests + " osobe";
 
     successTitle.textContent = "Hvala, " + firstName + "!";
 
     msg =
-      "Tvoja potvrda je uspješno zabilježena za " +
-      ppl +
-      ". Radujemo se što ćemo zajedno proslaviti 12. decembra!";
+      "Tvoja potvrda je uspješno zabilježena. Radujemo se što ćemo zajedno proslaviti naše vjenčanje!";
 
   } else {
 
     successTitle.textContent = "Hvala, " + firstName;
 
-    msg =
-      "Tvoja potvrda je uspješno zabilježena. Žao nam je što nećeš moći biti s nama. " +
-      "Mislićemo na tebe tokom svake zdravice.";
+    msg = "Tvoja potvrda je uspješno zabilježena. Žao nam je što nećeš moći biti s nama"
 
   }
 
