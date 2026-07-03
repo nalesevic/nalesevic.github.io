@@ -1100,21 +1100,19 @@ html { scroll-behavior:auto; }
 
 <div class="nav-inner">
 
-  <a href="#inicio" class="brand">Amina <span class="amp">&amp;</span> Nizam</a>
+  <a href="#pocetna" class="brand">Amina <span class="amp">&amp;</span> Nizam</a>
 
   <button class="nav-toggle" id="navToggle" aria-label="Otvori meni" aria-expanded="false"><span></span></button>
 
   <nav class="nav-links" id="navLinks">
 
-    <a href="#inicio">Početna</a>
-
-    <a href="#etiqueta">Etiqueta</a>
+    <a href="#pocetna">Početna</a>
 
     <a href="#rsvp">Potvrdi</a>
 
-    <a href="#itinerario">Raspored</a>
+    <a href="#raspored">Raspored</a>
 
-    <a href="#otros">Ostalo</a>
+    <a href="#ostalo">Ostalo</a>
 
   </nav>
 
@@ -1130,7 +1128,7 @@ html { scroll-behavior:auto; }
 
 <main>
 
-<section id="inicio" class="hero">
+<section id="pocetna" class="hero">
 
   <!-- ramitas botánicas de esquina -->
 
@@ -1324,8 +1322,6 @@ html { scroll-behavior:auto; }
 
     <button type="submit" class="btn-wed">Pošalji potvrdu</button>
 
-    <p style="text-align:center; margin:1rem 0 0; font-size:.82rem; color:var(--c-muted);">Demostración · tus datos no se almacenan.</p>
-
   </form>
 
 
@@ -1354,9 +1350,9 @@ html { scroll-behavior:auto; }
 
 
 
-<!-- ===== 5. ITINERARIO ===== -->
+<!-- ===== 5. raspored ===== -->
 
-<section id="itinerario" class="section" style="background: var(--c-metal-soft);">
+<section id="raspored" class="section" style="background: var(--c-metal-soft);">
 
   <div class="container container-narrow">
 
@@ -1434,9 +1430,9 @@ html { scroll-behavior:auto; }
 
 
 
-<!-- ===== 6. OTROS ===== -->
+<!-- ===== 6. ostalo ===== -->
 
-<section id="otros" class="section">
+<section id="ostalo" class="section">
 
   <div class="container container-narrow">
 
@@ -1980,40 +1976,6 @@ if ("IntersectionObserver" in window) {
   });
 
 }
-
-/* ============================================================
-   ZAŠTITA OD KOPIRANJA
-
-   - blokira: desni klik, označavanje teksta, kopiranje i povlačenje
-   - IZUZETAK: panel za odabir tema i RSVP obrazac ostaju funkcionalni
-
-   
-
-function isInteractive(target) {
-  return !!(
-    target.closest &&
-    target.closest(
-      "#themePanel, #rsvpForm, .theme-panel, input, textarea, select, button, a"
-    )
-  );
-}
-============================================================ */
-
-document.addEventListener("contextmenu", function (e) {
-  if (!isInteractive(e.target)) e.preventDefault();
-});
-
-document.addEventListener("selectstart", function (e) {
-  if (!isInteractive(e.target)) e.preventDefault();
-});
-
-document.addEventListener("copy", function (e) {
-  if (!isInteractive(e.target)) e.preventDefault();
-});
-
-document.addEventListener("dragstart", function (e) {
-  if (!isInteractive(e.target)) e.preventDefault();
-});
 
 })();
 
