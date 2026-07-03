@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="bs" data-mode="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentina & Mateo — Naše vjenčanje</title>
+
+  <style>
+    body { font-family: system-ui, sans-serif; margin:0; padding:0; background:#faf7f2; color:#222; }
+    .center { text-align:center; }
+    .hero { padding:60px 20px; }
+    .cta { display:inline-block; margin-top:20px; padding:12px 20px; background:#2f6b4f; color:white; text-decoration:none; border-radius:8px; }
+    .countdown { display:flex; justify-content:center; gap:10px; margin-top:20px; font-size:18px; }
+    .box { background:white; padding:10px 15px; border-radius:10px; min-width:70px; }
+    .timeline { max-width:700px; margin:50px auto; }
+    .item { background:white; padding:15px; margin-bottom:10px; border-radius:10px; }
+    .section { padding:40px 20px; max-width:800px; margin:auto; }
+    .card { background:white; padding:20px; border-radius:12px; margin-bottom:15px; }
+    h1,h2,h3 { margin:0 0 10px; }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero center">
+  <h1>Valentina & Mateo</h1>
+  <p>Vjenčanje • 12. decembar 2026</p>
+
+  <div class="countdown" id="cd">
+    <div class="box"><div id="d">00</div>Dana</div>
+    <div class="box"><div id="h">00</div>Sati</div>
+    <div class="box"><div id="m">00</div>Min</div>
+    <div class="box"><div id="s">00</div>Sec</div>
+  </div>
+
+  <a class="cta" href="#rsvp">Potvrdi dolazak</a>
+</div>
+
+<!-- STORY -->
+<div class="section">
+  <h2 class="center">Naša priča</h2>
+
+  <div class="timeline">
+    <div class="item">
+      <h3>Prva kafa (2019)</h3>
+      <p>Upoznali smo se u kafiću u centru grada i pričali satima.</p>
+    </div>
+
+    <div class="item">
+      <h3>Prvo putovanje (2020)</h3>
+      <p>Putovanje koje je promijenilo sve i pokazalo da idemo zajedno kroz život.</p>
+    </div>
+
+    <div class="item">
+      <h3>Dom za dvoje (2023)</h3>
+      <p>Prvi zajednički stan, biljke i novi početak.</p>
+    </div>
+
+    <div class="item">
+      <h3>Prosidba (2026)</h3>
+      <p>Na zalasku sunca, jedno pitanje i jedno “da”.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DRESS CODE -->
+<div class="section">
+  <h2 class="center">Dress code</h2>
+
+  <div class="card">
+    <p><b>Formalno · Vrtna elegancija</b></p>
+    <p>Preporučeni zemljani tonovi. Izbjegavati bijelu.</p>
+    <p>Žene: haljine midi ili duge</p>
+    <p>Muškarci: odijelo u toplim tonovima</p>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<div class="section">
+  <h2 class="center">Itinerar</h2>
+
+  <div class="card">17:00 — Ceremonija</div>
+  <div class="card">18:00 — Koktel dobrodošlice</div>
+  <div class="card">20:00 — Večera</div>
+  <div class="card">22:00 — Zabava</div>
+</div>
+
+<!-- RSVP -->
+<div class="section" id="rsvp">
+  <h2 class="center">RSVP</h2>
+
+  <div class="card">
+    <input placeholder="Puno ime" style="width:100%;padding:10px;margin-bottom:10px;">
+    <input placeholder="Broj gostiju" style="width:100%;padding:10px;margin-bottom:10px;">
+
+    <select style="width:100%;padding:10px;margin-bottom:10px;">
+      <option>Dolaziš li?</option>
+      <option>Da</option>
+      <option>Ne</option>
+    </select>
+
+    <button style="width:100%;padding:12px;background:#2f6b4f;color:white;border:none;">
+      Pošalji potvrdu
+    </button>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const target = new Date("2026-12-12T17:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = target - now;
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("d").innerText = d;
+  document.getElementById("h").innerText = h;
+  document.getElementById("m").innerText = m;
+  document.getElementById("s").innerText = s;
+}, 1000);
+</script>
+
+</body>
+</html>
