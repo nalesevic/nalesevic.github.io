@@ -329,6 +329,19 @@
     }
 
 
+    input[name="attend"] {
+      display: none;
+    }
+
+    input[name="attend"]+label {
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+
+    input[name="attend"]:checked+label {
+      border-color: #198754;
+      /* green */
+    }
 
     ::selection {
       background: transparent;
