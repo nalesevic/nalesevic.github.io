@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
     rel="stylesheet" />
 
 
@@ -99,7 +99,7 @@
 
       --font-serif: "Playfair Display", Georgia, serif;
 
-      --font-sans: "Lato", system-ui, sans-serif;
+      --font-sans: "Poppins", system-ui, sans-serif;
 
 
 
@@ -409,7 +409,7 @@
 
     .metal-rule {
 
-      width: 64px;
+      width: 233px;
       height: 1px;
       background: var(--c-metal);
 
@@ -446,15 +446,13 @@
     /* SVG razdjelnik s botaničkim listovima između naslova */
 
     .leaf-divider {
-
       width: 120px;
       height: 26px;
-      margin: 1.2rem auto 0;
+      margin-bottom: 24px;
       display: block;
 
       color: var(--c-metal);
       opacity: .9;
-
     }
 
 
@@ -830,7 +828,7 @@
       background: var(--c-primary-strong);
       color: var(--c-on-primary);
       border: none;
-      border-radius: 4px;
+      border-radius: 12px;
 
       padding: .9rem 2.2rem;
       font-family: var(--font-sans);
@@ -976,7 +974,7 @@
 
     .surface {
 
-      background: var(--c-surface);
+      background: white;
 
       border: 1px solid var(--c-line);
 
@@ -985,6 +983,21 @@
       box-shadow: 0 18px 50px -28px var(--c-shadow);
 
       transition: background-color .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease), box-shadow .4s var(--ease);
+
+    }
+
+    .surface-plan {
+
+      background: white;
+
+      border: 1px solid var(--c-line);
+
+      border-radius: 6px;
+
+      box-shadow: 0 18px 50px -28px var(--c-shadow);
+
+      transition: background-color .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease), box-shadow .4s var(--ease);
+      opacity: 0.9;
 
     }
 
@@ -1269,7 +1282,7 @@
     .form-control,
     .form-select {
 
-      background-color: var(--c-bg);
+      background-color: white;
       color: var(--c-text);
 
       border-color: var(--c-primary);
@@ -1293,22 +1306,23 @@
     }
 
     .form-control.invalid,
-    .form-select.invalid {
+    .form-select.invalid,
+    .form-label.invalid {
       border-color: var(--c-accent);
     }
 
     .attend-toggle {
-      display;
+      display: flex;
+      width: 100%;
       gap: .8rem;
     }
 
     .attend-toggle label {
-
       flex: 1;
       text-align: center;
       cursor: pointer;
       border: 1px solid var(--c-line);
-      border-radius: 4px;
+      border-radius: 999px;
 
       padding: .7rem;
       color: var(--c-muted);
@@ -1317,26 +1331,26 @@
 
       font-size: .85rem;
       letter-spacing: .04em;
-
+      font-weight: 600;
     }
 
     .attend-toggle input {
-      position;
+      position: absolute;
       opacity: 0;
-      pointer-events;
+      pointer-events: none;
     }
 
-    .attend-toggle input+label {
+    .attend-toggle input:checked+label {
       box-shadow: 0 0 0 .18rem var(--c-primary-soft);
     }
 
-    .attend-toggle input+label.yes {
+    .attend-toggle input:checked+label.yes {
       border-color: var(--c-primary-strong);
       color: white;
       background: var(--c-primary-strong);
     }
 
-    .attend-toggle input+label.no {
+    .attend-toggle input:checked+label.no {
       border-color: var(--c-accent-strong);
       color: white;
       background: var(--c-accent-strong);
@@ -1349,7 +1363,7 @@
       background: var(--c-primary-strong);
       color: var(--c-on-primary);
       border: none;
-      border-radius: 4px;
+      border-radius: 12px;
 
       padding: .85rem 2rem;
       font-family: var(--font-sans);
@@ -1544,7 +1558,7 @@
     /* ===== FOOTER ===== */
 
     .foot {
-      text-align;
+      text-align: center;
       padding: 4rem 0 6rem;
       border-top: 1px solid var(--c-line);
       position;
@@ -1555,6 +1569,7 @@
       font-family(--font-serif);
       font-size: 2.2rem;
       color: var(--c-text);
+      text-align: center;
     }
 
     .foot .amp {
@@ -1744,6 +1759,13 @@
 
     }
 
+    .form-select {
+      background-image: var(--bs-form-select-bg-img);
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 16px 12px;
+    }
+
     /* ============================================================
 
  MARCAS DE AGUA (anti-robo)
@@ -1761,7 +1783,7 @@
 
       opacity: .05;
 
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200'><text x='20' y='110' font-family='Lato, sans-serif' font-size='22' fill='%23000000' transform='rotate(-30 20 110)'>·</text></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200'><text x='20' y='110' font-family='Poppins, sans-serif' font-size='22' fill='%23000000' transform='rotate(-30 20 110)'>·</text></svg>");
 
     }
 
@@ -1769,7 +1791,7 @@
 
       opacity: .07;
 
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200'><text x='20' y='110' font-family='Lato, sans-serif' font-size='22' fill='%23ffffff' transform='rotate(-30 20 110)'>·</text></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200'><text x='20' y='110' font-family='Poppins, sans-serif' font-size='22' fill='%23ffffff' transform='rotate(-30 20 110)'>·</text></svg>");
 
     }
 
@@ -1872,6 +1894,7 @@
       }
 
     }
+
 
 
 
@@ -1986,9 +2009,9 @@
 
           <div class="cell"><span class="k"></span><span class="v">Nedjelja, 13 septembar, 2026</span></div>
 
-          <div class="cell"><span class="k"></span><span class="v">18:30 h</span></div>
+          <div class="cell"><span class="k"></span><span class="v">18:00 h</span></div>
 
-          <div class="cell"><span class="k"></span><span class="v">Hotel Urban · Bužim</span></div>
+          <div class="cell"><span class="k"></span><span class="v">Hotel Glamour · Bužim</span></div>
 
         </div>
 
@@ -2046,10 +2069,6 @@
 
         <div class="text-center-block reveal">
 
-          <span class="eyebrow">Raspored</span>
-
-          <h2 class="section-title">Plan dana</h2>
-
           <svg class="leaf-divider" viewBox="0 0 120 26" fill="none" stroke="currentColor" stroke-width="1.3"
             aria-hidden="true">
 
@@ -2066,7 +2085,11 @@
 
           </svg>
 
-          <p class="lead-muted">Pogledajte redoslijed događaja.</p>
+          <span class="eyebrow">Raspored</span>
+
+          <h2 class="section-title">Plan dana</h2>
+
+
 
         </div>
 
@@ -2074,9 +2097,9 @@
 
         <div class="itin">
 
-          <div class="itin-row surface reveal d1" style="padding:1.2rem 1.4rem;">
+          <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">18:30</div>
+            <div class="itin-time">18:00</div>
 
             <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
                 stroke-width="1.4">
@@ -2085,15 +2108,15 @@
               </svg></div>
 
             <div class="itin-body">
-              <h4>Ceremonija</h4>
-              <p>Okupljanje kod kuće mladoženje 17:00.</p>
+              <h4>Dolazak gostiju</h4>
+              <p>Lagana kahva uz priču</p>
             </div>
 
           </div>
 
-          <div class="itin-row surface reveal d1" style="padding:1.2rem 1.4rem;">
+          <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">19:00</div>
+            <div class="itin-time">18:30</div>
 
             <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
                 stroke-width="1.4">
@@ -2102,15 +2125,15 @@
               </svg></div>
 
             <div class="itin-body">
-              <h4>Svadbena večera</h4>
-              <p>Hotel Urban · Bužim</p>
+              <h4>Dolazak mladenaca</h4>
+              <p>Svečani ulazak mladenaca</p>
             </div>
 
           </div>
 
-          <div class="itin-row surface reveal d1" style="padding:1.2rem 1.4rem;">
+          <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">20:30</div>
+            <div class="itin-time">19:00</div>
 
             <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
                 stroke-width="1.4">
@@ -2120,13 +2143,31 @@
               </svg></div>
 
             <div class="itin-body">
-              <h4>Torta</h4>
-              <p>Imaaaaa svega.</p>
+              <h4>Ručak</h4>
+              <p>Uživajte u ukusnoj hrani</p>
             </div>
 
           </div>
 
-          <div class="itin-row surface reveal d1" style="padding:1.2rem 1.4rem;">
+          <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
+
+            <div class="itin-time">20:00</div>
+
+            <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                stroke-width="1.4">
+                <path d="M9 18V5l10-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="19" cy="16" r="3" />
+              </svg></div>
+
+            <div class="itin-body">
+              <h4>Darivanje i slikanje</h4>
+              <p>Zabilježimo ovaj poseban dan zajedno</p>
+            </div>
+
+          </div>
+
+          <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
             <div class="itin-time">21:00</div>
 
@@ -2138,8 +2179,26 @@
               </svg></div>
 
             <div class="itin-body">
+              <h4>Torta</h4>
+              <p>Slatki trenutak večeri</p>
+            </div>
+
+          </div>
+
+          <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
+
+            <div class="itin-time">21:15</div>
+
+            <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                stroke-width="1.4">
+                <path d="M9 18V5l10-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="19" cy="16" r="3" />
+              </svg></div>
+
+            <div class="itin-body">
               <h4>Proslava</h4>
-              <p>Slavlje.......</p>
+              <p>Večer ispunjena srećom, muzikom i uspomenama</p>
             </div>
 
           </div>
@@ -2158,10 +2217,6 @@
 
         <div class="text-center-block reveal">
 
-          <span class="eyebrow">Potvrda dolaska</span>
-
-          <h2 class="section-title">Potvrdite svoj dolazak</h2>
-
           <svg class="leaf-divider" viewBox="0 0 120 26" fill="none" stroke="currentColor" stroke-width="1.3"
             aria-hidden="true">
 
@@ -2178,7 +2233,11 @@
 
           </svg>
 
-          <p class="lead-muted">Potvrdite svoj dolazak najkasnije do <strong>1. septembra 2026</strong>.</p>
+          <span class="eyebrow">Potvrda dolaska</span>
+
+          <h2 class="section-title">Potvrdite svoj dolazak</h2>
+
+          <p class="lead-muted">Najkasnije do <strong>30. augusta 2026</strong>.</p>
 
         </div>
 
@@ -2192,7 +2251,7 @@
 
               <label class="form-label" for="f-name">Puno ime i prezime</label>
 
-              <input type="text" class="form-control" id="f-name" name="name" placeholder="Vaše ime"
+              <input type="text" class="form-control" id="f-name" name="name" placeholder="Vaše ime i prezime"
                 autocomplete="name" />
 
               <!-- <div class="field-err" id="err-name">Upišite svoje ime.</div> -->
@@ -2209,9 +2268,7 @@
 
                 <select class="form-select" id="f-guests" name="guests">
 
-                  <option value="" selected disabled>Odaberite</option>
-
-                  <option value="0">0</option>
+                  <option value="0" selected disabled>0</option>
 
                   <option value="1">1</option>
 
@@ -2295,10 +2352,6 @@
 
         <div class="text-center-block reveal">
 
-          <span class="eyebrow">Informacije za goste</span>
-
-          <h2 class="section-title">Korisne informacije</h2>
-
           <svg class="leaf-divider" viewBox="0 0 120 26" fill="none" stroke="currentColor" stroke-width="1.3"
             aria-hidden="true">
 
@@ -2315,11 +2368,15 @@
 
           </svg>
 
+          <span class="eyebrow">Informacije za goste</span>
+
+          <h2 class="section-title">Korisne informacije</h2>
+
         </div>
 
 
 
-        <div class="row g-4 mt-1">
+        <div class="row g-4 mt-2">
 
           <div class="col-md-4 reveal d1">
 
@@ -2352,7 +2409,7 @@
 
               <h4>Lokacija</h4>
 
-              <p><strong>Hotel Urban</strong> — Predivni restoran u centru Bužima.</p>
+              <p><strong>Hotel Glamour</strong> — Predivni restoran u centru Bužima.</p>
 
               <p> <a href="https://maps.app.goo.gl/mhfWvkfHawybKVrY6" target="_blank" rel="noopener noreferrer"
                   class="ic">
@@ -2379,56 +2436,16 @@
 
     <div class="container container-narrow reveal">
 
-      <p class="eyebrow">S ljubavlju vas očekuju</p>
-
       <div class="names">Amina <span class="amp">&amp;</span> Nizam</div>
 
       <div class="metal-rule"></div>
+
+      <p class="eyebrow">S ljubavlju vas očekuju</p>
 
     </div>
 
   </footer>
 
-
-
-  <!-- ===== PANEL DE TEMAS 
-
-<aside class="theme-panel" id="themePanel" aria-label="Selector de tema">
-
-<span class="tp-label">Isprobajte teme</span>
-
-  <div class="tp-dots" id="tpDots">
-
-<button class="tp-dot" data-palette="salvia" style="--p:#8A9A7B" title="Salvia" aria-label="Paleta salvia" aria-pressed="true"></button>
-
-<button class="tp-dot" data-palette="blush"  style="--p:#C98986" title="Blush"  aria-label="Paleta blush" aria-pressed="false"></button>
-
-<button class="tp-dot" data-palette="marino" style="--p:#2C3E50" title="Marino" aria-label="Paleta marino" aria-pressed="false"></button>
-
-<button class="tp-dot" data-palette="mocha"  style="--p:#A47864" title="Mocha"  aria-label="Paleta mocha" aria-pressed="false"></button>
-
-  </div>
-
-  <div class="tp-divider"></div>
-
-  <button class="mode-switch" id="modeSwitch" type="button" aria-label="Promijeni svijetli ili tamni način" role="switch" aria-checked="false">
-
-<svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
-
-<span class="knob">
-
-  <svg class="knob-sun" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg>
-
-  <svg class="knob-moon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20 12.4A7 7 0 1 1 11.6 4a5.6 5.6 0 0 0 8.4 8.4Z"/></svg>
-
-</span>
-
-<svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12.8A8 8 0 1 1 11.2 3a6 6 0 0 0 9.8 9.8Z"/></svg>
-
-  </button>
-
-</aside>
-  ===== -->
 
 
 
@@ -2513,10 +2530,10 @@
       }
 
       /* ============================================================
-         ODBROJAVANJE → 13. septembar 2026. u 18:30 (lokalno vrijeme)
+         ODBROJAVANJE → 13. septembar 2026. u 18:00 (lokalno vrijeme)
          ============================================================ */
 
-      var TARGET = Date.UTC(2026, 8, 13, 18, 30, 0);
+      var TARGET = Date.UTC(2026, 8, 13, 18, 0, 0);
 
       // 17:00 u Méridi (UTC-6) = 23:00 UTC: isto odbrojavanje za sve
 
@@ -2671,6 +2688,8 @@
 
       var fName = document.getElementById("f-name");
       var fGuests = document.getElementById("f-guests");
+      var attYes = document.getElementById("att-yes");
+      var attNo = document.getElementById("att-no");
 
       if (fName)
         fName.addEventListener("input", function () {
@@ -2711,11 +2730,15 @@
           markInvalid(fName, false);
         }
 
-        if (!attend) {
+        if (!attYes && !attYes) {
           showErr("err-attend", true);
+          markInvalid(attYes, true);
+          markInvalid(attNo, true);
           ok = false;
         } else {
           showErr("err-attend", false);
+          markInvalid(attYes, false);
+          markInvalid(attNo, true);
         }
 
         if (!ok) {
