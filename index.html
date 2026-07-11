@@ -399,7 +399,7 @@
       color: var(--c-muted);
       font-weight: 300;
       font-size: 1.06rem;
-      max-width: 60ch;
+      /* max-width: 60ch; */
       margin-inline: auto;
     }
 
@@ -1445,7 +1445,7 @@
     /* ===== RASPORED ===== */
 
     .itin {
-      max-width: 720px;
+      /* max-width: 720px; */
       margin: 2.2rem auto 0;
     }
 
@@ -1453,9 +1453,10 @@
 
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1.4rem;
       margin-bottom: 1rem;
-
+      text-align: center;
       transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .4s var(--ease), border-color .4s var(--ease);
 
     }
@@ -1479,9 +1480,10 @@
       flex: 0 0 auto;
       border: 1px solid var(--c-metal);
       border-radius: 50%;
-      display;
-      align-items;
-      justify-content;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       color: var(--c-metal);
     }
 
@@ -2101,15 +2103,30 @@
 
             <div class="itin-time">18:00</div>
 
-            <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                stroke-width="1.4">
-                <path d="M12 3v4M5 21V11a7 7 0 0 1 14 0v10" />
-                <path d="M3 21h18" />
-              </svg></div>
-
             <div class="itin-body">
               <h4>Dolazak gostiju</h4>
               <p>Lagana kahva uz priču</p>
+            </div>
+
+            <div class="itin-ic">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- Steam -->
+                <path d="M8 4c0 1-.7 1.5-.7 2.5S8 8 8 9" />
+                <path d="M12 4c0 1-.7 1.5-.7 2.5S12 8 12 9" />
+                <path d="M16 4c0 1-.7 1.5-.7 2.5S16 8 16 9" />
+
+                <!-- Cup -->
+                <path d="M6 10h10v4a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4z" />
+
+                <!-- Handle -->
+                <path d="M16 11h1.5a2 2 0 0 1 0 4H16" />
+
+                <!-- Saucer -->
+                <path d="M5 20h14" />
+
+              </svg>
             </div>
 
           </div>
@@ -2118,15 +2135,24 @@
 
             <div class="itin-time">18:30</div>
 
-            <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                stroke-width="1.4">
-                <path d="M6 4h12l-5 8v6" />
-                <path d="M9 18h6" />
-              </svg></div>
-
             <div class="itin-body">
               <h4>Dolazak mladenaca</h4>
               <p>Svečani ulazak mladenaca</p>
+            </div>
+
+            <div class="itin-ic">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- Left person -->
+                <circle cx="8" cy="8" r="3" />
+                <path d="M3.5 19c0-3 2-5 4.5-5s4.5 2 4.5 5" />
+
+                <!-- Right person -->
+                <circle cx="16" cy="8" r="3" />
+                <path d="M11.5 19c0-3 2-5 4.5-5s4.5 2 4.5 5" />
+
+              </svg>
             </div>
 
           </div>
@@ -2135,16 +2161,26 @@
 
             <div class="itin-time">19:00</div>
 
-            <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                stroke-width="1.4">
-                <path d="M5 11h14" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                <path d="M6 11l1 8h10l1-8" />
-              </svg></div>
-
             <div class="itin-body">
               <h4>Ručak</h4>
               <p>Uživajte u ukusnoj hrani</p>
+            </div>
+
+            <div class="itin-ic">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- Handle -->
+                <circle cx="12" cy="6" r="1" />
+
+                <!-- Dome -->
+                <path d="M5 13a7 7 0 0 1 14 0" />
+
+                <!-- Tray -->
+                <path d="M3 13h18" />
+                <path d="M5 17h14" />
+
+              </svg>
             </div>
 
           </div>
@@ -2153,16 +2189,28 @@
 
             <div class="itin-time">20:00</div>
 
-            <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                stroke-width="1.4">
-                <path d="M9 18V5l10-2v13" />
-                <circle cx="6" cy="18" r="3" />
-                <circle cx="19" cy="16" r="3" />
-              </svg></div>
-
             <div class="itin-body">
               <h4>Darivanje i slikanje</h4>
               <p>Zabilježimo ovaj poseban dan zajedno</p>
+            </div>
+
+            <div class="itin-ic">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- Camera body -->
+                <rect x="3" y="7" width="18" height="12" rx="2" />
+
+                <!-- Top -->
+                <path d="M8 7l1.5-2h5L16 7" />
+
+                <!-- Lens -->
+                <circle cx="12" cy="13" r="3.5" />
+
+                <!-- Flash -->
+                <circle cx="18" cy="10" r="0.7" />
+
+              </svg>
             </div>
 
           </div>
@@ -2171,17 +2219,39 @@
 
             <div class="itin-time">21:00</div>
 
-            <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                stroke-width="1.4">
-                <path d="M9 18V5l10-2v13" />
-                <circle cx="6" cy="18" r="3" />
-                <circle cx="19" cy="16" r="3" />
-              </svg></div>
-
             <div class="itin-body">
               <h4>Torta</h4>
               <p>Slatki trenutak večeri</p>
             </div>
+
+            <div class="itin-ic">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- Candle -->
+                <path d="M12 2v3" />
+                <path d="M12 1c.6.5.6 1.2 0 1.7-.6-.5-.6-1.2 0-1.7" />
+
+                <!-- Top tier -->
+                <path d="M10 5h4v3h-4z" />
+                <path d="M10 6.5c.4.4.8.4 1.2 0 .4.4.8.4 1.2 0 .4.4.8.4 1.2 0" />
+
+                <!-- Middle tier -->
+                <path d="M8 8h8v4H8z" />
+                <path d="M8 10c.5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0" />
+
+                <!-- Bottom tier -->
+                <path d="M6 12h12v6H6z" />
+                <path
+                  d="M6 15c.5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0 .5.5 1 .5 1.5 0" />
+
+                <!-- Cake stand -->
+                <path d="M5 20h14" />
+
+              </svg>
+            </div>
+
+
 
           </div>
 
@@ -2189,6 +2259,11 @@
 
             <div class="itin-time">21:15</div>
 
+            <div class="itin-body">
+              <h4>Proslava</h4>
+              <p>Večer ispunjena srećom, muzikom i uspomenama</p>
+            </div>
+
             <div class="itin-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
                 stroke-width="1.4">
                 <path d="M9 18V5l10-2v13" />
@@ -2196,10 +2271,7 @@
                 <circle cx="19" cy="16" r="3" />
               </svg></div>
 
-            <div class="itin-body">
-              <h4>Proslava</h4>
-              <p>Večer ispunjena srećom, muzikom i uspomenama</p>
-            </div>
+
 
           </div>
 
@@ -2346,7 +2418,7 @@
 
     <!-- ===== ostalo ===== -->
 
-    <section id="ostalo" class="section">
+    <section id="ostalo" class="section" style="background: var(--c-metal-soft);">
 
       <div class="container container-narrow">
 
@@ -2378,7 +2450,7 @@
 
         <div class="row g-4 mt-2">
 
-          <div class="col-md-4 reveal d1">
+          <div class="col-md-6 reveal d1">
 
             <div class="surface info-card">
 
@@ -2391,14 +2463,12 @@
 
               <p>Šerijatsko i općinsko vjenčanje je obavljeno u Sarajevu.</p>
 
-              <p>Proslavite sa nama</p>
-
 
             </div>
 
           </div>
 
-          <div class="col-md-4 reveal d3">
+          <div class="col-md-6 reveal d3">
 
             <div class="surface info-card">
 
@@ -2411,7 +2481,7 @@
 
               <p><strong>Hotel Glamour</strong> — Predivni restoran u centru Bužima.</p>
 
-              <p> <a href="https://maps.app.goo.gl/mhfWvkfHawybKVrY6" target="_blank" rel="noopener noreferrer"
+              <p> <a href="https://maps.app.goo.gl/Xv7e4Sed5eZY3pFk6" target="_blank" rel="noopener noreferrer"
                   class="ic">
                   Otvori u Google Maps
                 </a></p>
