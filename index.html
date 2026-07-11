@@ -32,7 +32,7 @@
 
 
 
-  <!-- Google Fonts: Playfair Display + Poppins -->
+  <!-- Google Fonts: Playfair Display + Lato -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -734,7 +734,7 @@
 
       text-align: center;
       position: relative;
-      padding: 120px 0 130px;
+      padding: 180px 0 130px;
 
       background:
 
@@ -805,7 +805,7 @@
       transform: rotate(180deg);
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 960px) {
       .hero {
         min-height: auto
       }
@@ -815,7 +815,8 @@
       }
 
       .hero-names {
-        display: inline-block;
+        display: inline-block !important;
+        font-size: 39px !important;
       }
     }
 
@@ -897,9 +898,7 @@
         flex-direction: column;
       }
 
-      .hero-meta .cell {
-        padding: .6rem 1rem;
-      }
+      
 
       .hero-meta .cell+.cell {
         border-left: none;
