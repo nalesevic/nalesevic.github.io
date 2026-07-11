@@ -415,7 +415,7 @@
 
     .metal-rule-cover {
 
-      width: 268px;
+      width: 350px;
       height: 1px;
       background: var(--c-metal);
 
@@ -522,7 +522,7 @@
       right: 0;
       z-index: 1030;
 
-      background: color-mix(in srgb, var(--c-bg) 86%, transparent);
+      background: #EAEAEF;
 
       backdrop-filter: blur(10px);
 
@@ -740,6 +740,23 @@
 
     }
 
+    .background-pocetna {
+      background-image: url(./cover.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+    @media (max-width: 560px) {
+      .background-pocetna {
+        background-image: url(./phone-cover.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
     .hero-inner {
       position: relative;
       z-index: 2;
@@ -768,6 +785,9 @@
     }
 
     @media (max-width: 560px) {
+      .hero {
+        min-height:auto
+      }
       .hero-sprig {
         opacity: .35;
       }
@@ -778,7 +798,7 @@
     .hero .pre {
       letter-spacing: .5em;
       text-transform: uppercase;
-      font-size: .74rem;
+      font-size: 15px;
       color: var(--c-muted);
       margin-top: 2.4rem;
     }
@@ -2018,39 +2038,7 @@
 
   <main>
 
-    <section id="pocetna" class="hero">
-
-      <!-- ramitas botánicas de esquina -->
-
-      <svg class="hero-sprig tl" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.4"
-        aria-hidden="true">
-
-        <path d="M8 8 C40 24 64 48 80 96" />
-
-        <path d="M30 26 C44 24 56 30 60 42" />
-
-        <path d="M44 44 C58 42 70 48 74 60" />
-
-        <path d="M58 64 C72 62 84 70 86 82" />
-
-        <path d="M22 18 C20 30 24 42 34 50" />
-
-      </svg>
-
-      <svg class="hero-sprig br" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.4"
-        aria-hidden="true">
-
-        <path d="M8 8 C40 24 64 48 80 96" />
-
-        <path d="M30 26 C44 24 56 30 60 42" />
-
-        <path d="M44 44 C58 42 70 48 74 60" />
-
-        <path d="M58 64 C72 62 84 70 86 82" />
-
-        <path d="M22 18 C20 30 24 42 34 50" />
-
-      </svg>
+    <section id="pocetna" class="hero background-pocetna">
 
 
 
