@@ -316,9 +316,7 @@
 
       /* diskretni botanički uzorak koji se prilagođava svijetlom i tamnom načinu */
 
-      background-image:
 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%238A9A7B' stroke-opacity='0.06' stroke-width='1.2'><path d='M60 20 C50 40 50 60 60 80 C70 60 70 40 60 20Z'/><path d='M60 35 C66 38 70 44 71 52'/><path d='M60 35 C54 38 50 44 49 52'/><path d='M20 90 C30 86 40 88 46 96'/><path d='M100 100 C92 92 90 82 94 72'/></g></svg>");
 
       background-repeat: repeat;
 
@@ -436,6 +434,12 @@
       border: 1px solid var(--c-metal);
       transform: translateY(-50%) rotate(45deg);
 
+    }
+
+    @media (max-width: 560px) {
+      .metal-rule-cover {
+        width: 238px;
+      }
     }
 
     .metal-rule-cover::before {
@@ -741,7 +745,7 @@
     }
 
     .background-pocetna {
-      background-image: url(./cover.png);
+      background-image: url(./cover-home.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -750,7 +754,7 @@
 
     @media (max-width: 560px) {
       .background-pocetna {
-        background-image: url(./phone-cover.png);
+        background-image: url(./phone-cover-home.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -758,14 +762,14 @@
     }
 
     .background-rsvp {
-      background-image: url(./cover.png);
+      background-image: url(./cover-rsvp.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
 
 
-    @media (max-width: 560px) {
+    @media (max-width: 899px) {
       .background-rsvp {
         background-image: url(./phone-cover-rsvp.png);
         background-size: cover;
@@ -808,6 +812,10 @@
 
       .hero-sprig {
         opacity: .35;
+      }
+
+      .hero-names {
+        display: inline-block;
       }
     }
 
@@ -895,6 +903,10 @@
 
       .hero-meta .cell+.cell {
         border-left: none;
+      }
+
+      .hero .pre {
+        font-size: 10px;
       }
 
     }
@@ -1666,12 +1678,13 @@
       border-top: 1px solid var(--c-line);
       position;
       z-index: 2;
+      background-color: rgb(68 75 62);
     }
 
     .foot .names {
       font-family(--font-serif);
       font-size: 2.2rem;
-      color: var(--c-text);
+      color: white;
       text-align: center;
     }
 
@@ -2081,9 +2094,9 @@
 
           <div class="cell"><span class="k"></span><span class="v">Nedjelja, 13. septembar 2026</span></div>
 
-          <div class="cell"><span class="k"></span><span class="v">18:00 h</span></div>
-
           <div class="cell"><span class="k"></span><span class="v">Restoran Glamour · Bužim</span></div>
+
+          <div class="cell"><span class="k"></span><span class="v">18:00 h</span></div>
 
         </div>
 
