@@ -65,7 +65,7 @@
 
       /* Pozadina / tekst (DEFAULT = light) */
 
-      --c-bg: #F7F3EC;
+      --c-bg: #EDEDEF;
 
       --c-surface: #FFFFFF;
 
@@ -294,7 +294,7 @@
 
       color: var(--c-text);
 
-      background-color: var(--c-bg);
+      background-color: #EDEDEF;
 
       line-height: 1.7;
 
@@ -757,6 +757,23 @@
       }
     }
 
+    .background-rsvp {
+      background-image: url(./cover.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+    @media (max-width: 560px) {
+      .background-rsvp {
+        background-image: url(./phone-cover-rsvp.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
     .hero-inner {
       position: relative;
       z-index: 2;
@@ -786,8 +803,9 @@
 
     @media (max-width: 560px) {
       .hero {
-        min-height:auto
+        min-height: auto
       }
+
       .hero-sprig {
         opacity: .35;
       }
@@ -1942,7 +1960,7 @@
     }
 
     .reveal.in {
-      opacity: 1;
+      opacity: 0.9;
       transform: none;
     }
 
@@ -2117,7 +2135,7 @@
 
 
 
-    <section id="raspored" class="section" style="background: var(--c-metal-soft);">
+    <section id="raspored" class="section">
 
       <div class="container container-narrow">
 
@@ -2348,7 +2366,7 @@
 
     <!-- ===== RSVP ===== -->
 
-    <section id="rsvp" class="section">
+    <section id="rsvp" class="section background-rsvp">
 
       <div class="container container-narrow">
 
@@ -2380,7 +2398,7 @@
 
 
 
-        <div class="surface rsvp-card reveal d1" style="max-width:640px; margin:2.4rem auto 0;">
+        <div class="surface rsvp-card reveal d1" style="margin:2.4rem auto 0;">
 
           <form id="rsvpForm" novalidate>
 
@@ -2483,7 +2501,7 @@
 
     <!-- ===== ostalo ===== -->
 
-    <section id="ostalo" class="section" style="background: var(--c-metal-soft);">
+    <section id="ostalo" class="section">
 
       <div class="container container-narrow">
 
