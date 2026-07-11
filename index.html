@@ -1325,7 +1325,6 @@
       display: flex;
       width: 100%;
       gap: .8rem;
-      margin-top: 12px;
     }
 
     .yes.invalid {
@@ -1483,6 +1482,7 @@
     .itin-row {
       transform: translateX(8px);
       box-shadow: 0 22px 46px -26px var(--c-shadow);
+      text-align: left;
     }
 
     .itin-time {
@@ -1491,6 +1491,10 @@
       color: var(--c-primary);
       min-width: 92px;
       font-variant-numeric: tabular-nums;
+    }
+
+    .itin-time-body {
+      display: flex;
     }
 
     .itin-ic {
@@ -1522,6 +1526,7 @@
       .itin-time {
         font-size: 1.2rem;
         min-width: 72px;
+        align-content: center;
       }
 
       .itin-row {
@@ -1530,6 +1535,10 @@
 
       .itin-row {
         transform;
+      }
+
+      .itin-time-body {
+        display: inline-flex;
       }
     }
 
@@ -2120,11 +2129,13 @@
 
           <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">18:00</div>
+            <div class="itin-time-body">
+              <div class="itin-time">18:00</div>
 
-            <div class="itin-body">
-              <h4>Dolazak gostiju</h4>
-              <p>Lagana kahva uz priču</p>
+              <div class="itin-body">
+                <h4>Dolazak gostiju</h4>
+                <p>Lagana kahva uz priču</p>
+              </div>
             </div>
 
             <div class="itin-ic">
@@ -2152,11 +2163,13 @@
 
           <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">18:30</div>
+            <div class="itin-time-body">
+              <div class="itin-time">18:30</div>
 
-            <div class="itin-body">
-              <h4>Dolazak mladenaca</h4>
-              <p>Svečani ulazak mladenaca</p>
+              <div class="itin-body">
+                <h4>Dolazak mladenaca</h4>
+                <p>Svečani ulazak mladenaca</p>
+              </div>
             </div>
 
             <div class="itin-ic">
@@ -2178,11 +2191,13 @@
 
           <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">19:00</div>
+            <div class="itin-time-body">
+              <div class="itin-time">19:00</div>
 
-            <div class="itin-body">
-              <h4>Ručak</h4>
-              <p>Uživajte u ukusnoj hrani</p>
+              <div class="itin-body">
+                <h4>Ručak</h4>
+                <p>Uživajte u ukusnoj hrani</p>
+              </div>
             </div>
 
             <div class="itin-ic">
@@ -2206,11 +2221,13 @@
 
           <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">20:00</div>
+            <div class="itin-time-body">
+              <div class="itin-time">20:00</div>
 
-            <div class="itin-body">
-              <h4>Darivanje i slikanje</h4>
-              <p>Zabilježimo ovaj poseban dan zajedno</p>
+              <div class="itin-body">
+                <h4>Darivanje i slikanje</h4>
+                <p>Zabilježimo ovaj poseban dan zajedno</p>
+              </div>
             </div>
 
             <div class="itin-ic">
@@ -2236,11 +2253,13 @@
 
           <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">21:00</div>
+            <div class="itin-time-body">
+              <div class="itin-time">21:00</div>
 
-            <div class="itin-body">
-              <h4>Torta</h4>
-              <p>Slatki trenutak večeri</p>
+              <div class="itin-body">
+                <h4>Torta</h4>
+                <p>Slatki trenutak večeri</p>
+              </div>
             </div>
 
             <div class="itin-ic">
@@ -2276,11 +2295,13 @@
 
           <div class="itin-row surface-plan reveal d1" style="padding:1.2rem 1.4rem;">
 
-            <div class="itin-time">21:15</div>
+            <div class="itin-time-body">
+              <div class="itin-time">21:15</div>
 
-            <div class="itin-body">
-              <h4>Proslava</h4>
-              <p>Večer ispunjena srećom, muzikom i uspomenama</p>
+              <div class="itin-body">
+                <h4>Proslava</h4>
+                <p>Večer ispunjena srećom, muzikom i uspomenama</p>
+              </div>
             </div>
 
             <div class="itin-ic">
@@ -2380,7 +2401,7 @@
 
               <div class="col-sm-6 mb-3">
 
-                <label class="form-label d-block">Dolazite?</label>
+                <label class="form-label">Dolazite?</label>
 
                 <div class="attend-toggle" id="attend-toggle">
 
