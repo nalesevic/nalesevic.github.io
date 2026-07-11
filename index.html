@@ -1315,6 +1315,15 @@
       display: flex;
       width: 100%;
       gap: .8rem;
+      margin-top: 10px;
+    }
+
+    .yes.invalid {
+      border-color: var(--c-accent);
+    }
+
+    .no.invalid {
+      border-color: var(--c-accent);
     }
 
     .attend-toggle label {
@@ -1993,7 +2002,7 @@
 
       <div class="container container-narrow hero-inner">
 
-        <p class="pre reveal">Pozivamo Vas na vjenčanje</p>
+        <p class="pre reveal">Pozivamo Vas na svadbu</p>
 
         <h1 class="hero-names reveal d1">
 
@@ -2362,15 +2371,15 @@
 
                 <label class="form-label d-block">Dolazite?</label>
 
-                <div class="attend-toggle">
+                <div class="attend-toggle" id="attend-toggle">
 
                   <input type="radio" id="att-yes" name="attend" value="yes" />
 
-                  <label for="att-yes" class="yes">Da, dolazim</label>
+                  <label for="att-yes" id="yes" class="yes">Da, dolazim</label>
 
                   <input type="radio" id="att-no" name="attend" value="no" />
 
-                  <label for="att-no" class="no">Neću moći</label>
+                  <label for="att-no" id="no" class="no">Neću moći</label>
 
                 </div>
 
@@ -2758,8 +2767,8 @@
 
       var fName = document.getElementById("f-name");
       var fGuests = document.getElementById("f-guests");
-      var attYes = document.getElementById("att-yes");
-      var attNo = document.getElementById("att-no");
+      var attYes = document.getElementById("yes");
+      var attNo = document.getElementById("no");
 
       if (fName)
         fName.addEventListener("input", function () {
@@ -2780,6 +2789,8 @@
       form.querySelectorAll('input[name="attend"]').forEach(function (r) {
         r.addEventListener("change", function () {
           showErr("err-attend", false);
+          markInvalid(attYes, false);
+          markInvalid(attNo, false);
         });
       });
 
@@ -2800,7 +2811,7 @@
           markInvalid(fName, false);
         }
 
-        if (!attYes && !attYes) {
+        if (!attend) {
           showErr("err-attend", true);
           markInvalid(attYes, true);
           markInvalid(attNo, true);
@@ -2808,7 +2819,7 @@
         } else {
           showErr("err-attend", false);
           markInvalid(attYes, false);
-          markInvalid(attNo, true);
+          markInvalid(attNo, false);
         }
 
         if (!ok) {
