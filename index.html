@@ -18,7 +18,7 @@
   <meta property="og:url" content="https://nizam.alesevic.com/">
   <meta property="og:type" content="website">
 
-  <!-- Favicon (monogram V&M, zadana primarna boja: salvia #8A9A7B) -->
+  <!-- Favicon (monogram A&N, zadana primarna boja: salvia #8A9A7B) -->
 
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238A9A7B'/%3E%3Ctext x='32' y='43' font-family='Georgia, serif' font-size='26' font-style='italic' fill='%23FFFFFF' text-anchor='middle'%3EA%26amp;N%3C/text%3E%3C/svg%3E" />
@@ -413,13 +413,48 @@
 
     /* ukrasna tanka metalna linija */
 
+    .metal-rule-cover {
+
+      width: 268px;
+      height: 1px;
+      background: var(--c-metal);
+
+      margin: 12px auto;
+      position: relative;
+      opacity: .9;
+    }
+
+    .metal-rule-cover::before,
+    .metal-rule-cover::after {
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 5px;
+      height: 5px;
+
+      border: 1px solid var(--c-metal);
+      transform: translateY(-50%) rotate(45deg);
+
+    }
+
+    .metal-rule-cover::before {
+      left: -14px;
+    }
+
+    .metal-rule-cover::after {
+      right: -14px;
+    }
+
     .metal-rule {
 
       width: 268px;
       height: 1px;
       background: var(--c-metal);
 
-      margin: 1.4rem auto;
+      margin-top: 8px;
+      margin-right: auto;
+      margin-left: auto;
       position: relative;
       opacity: .9;
 
@@ -745,7 +780,7 @@
       text-transform: uppercase;
       font-size: .74rem;
       color: var(--c-muted);
-      margin-bottom: 1.6rem;
+      margin-top: 2.4rem;
     }
 
     .hero-names {
@@ -1979,7 +2014,7 @@
 
 
 
-  <!-- ===== 1. HERO / INVITACIÓN ===== -->
+  <!-- ===== 1. HERO / INVITATION ===== -->
 
   <main>
 
@@ -2034,7 +2069,7 @@
 
         <p class="pre reveal">Pozivaju Vas na svadbu</p>
 
-        <div class="metal-rule reveal d2"></div>
+        <div class="metal-rule-cover reveal d2"></div>
 
         <div class="hero-meta reveal d2">
 
